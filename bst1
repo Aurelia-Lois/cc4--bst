@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class BST {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask user for input n
+        System.out.print("Enter the size of the tree (n): ");
+        int n = scanner.nextInt();
+
+        // Ask user for input start
+        System.out.print("Enter the starting value (start): ");
+        int start = scanner.nextInt();
+
+        // Create the Tree array
+        int[] Tree = new int[n];
+        for (int i = 0; i < n; i++) {
+            Tree[i] = start + i; // Fill the array starting from 'start'
+        }
+
+        // Print the Tree array
+        System.out.print("Tree array: ");
+        for (int value : Tree) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+
+        // Ask user for input choice
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        // Check if choice is valid
+        boolean isValid = false;
+        for (int value : Tree) {
+            if (value == choice) {
+                isValid = true;
+                break;
+            }
+        }
+
+        // Print result based on choice validity
+        if (!isValid) {
+            System.out.println("Invalid");
+        } else {
+            System.out.println("Choice is valid. The tree root is: " + choice);
+        }
+
+        // Print the one-dimensional array of the tree
+        System.out.print("Tree array: ");
+        for (int value : Tree) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+
+        // Close the scanner
+        scanner.close();
+    }
+}
